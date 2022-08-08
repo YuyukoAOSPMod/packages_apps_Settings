@@ -33,7 +33,6 @@ public class ModVersionPreferenceController extends BasePreferenceController {
 
     @Override
     public CharSequence getSummary() {
-        String version = SystemProperties.get(KEY_MOD_BRANCH_PROP, mContext.getString(R.string.unknown)).toUpperCase() + " | " + SystemProperties.get(KEY_MOD_BUILD_TYPE_PROP, mContext.getString(R.string.unknown)).toUpperCase();
-        return version;
+        return SystemProperties.get(KEY_MOD_BRANCH_PROP, mContext.getString(R.string.unknown)) + " | " + SystemProperties.get(KEY_MOD_BUILD_TYPE_PROP, mContext.getString(R.string.unknown)).toUpperCase();
     }
 }
