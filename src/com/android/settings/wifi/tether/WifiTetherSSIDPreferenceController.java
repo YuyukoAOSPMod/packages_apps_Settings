@@ -22,6 +22,7 @@ import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.SoftApConfiguration;
+import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.FeatureFlagUtils;
 import android.util.Log;
@@ -30,6 +31,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.preference.EditTextPreference;
 import androidx.preference.Preference;
 
+import com.android.settings.R;
 import com.android.settings.core.FeatureFlags;
 import com.android.settings.overlay.FeatureFactory;
 import com.android.settings.widget.ValidatedEditTextPreference;
@@ -41,10 +43,12 @@ public class WifiTetherSSIDPreferenceController extends WifiTetherBasePreference
 
     private static final String TAG = "WifiTetherSsidPref";
     private static final String PREF_KEY = "wifi_tether_network_name";
+    private static final String KEY_DEVICE_MARKET_NAME = "ro.product.vendor.marketname";
     @VisibleForTesting
     static final String DEFAULT_SSID = "AndroidAP";
 
     private String mSSID;
+    private String mMarketDeviceName;
     private WifiDeviceNameTextValidator mWifiDeviceNameTextValidator;
 
     private final MetricsFeatureProvider mMetricsFeatureProvider;
@@ -56,6 +60,7 @@ public class WifiTetherSSIDPreferenceController extends WifiTetherBasePreference
         super(context, listener);
         mWifiDeviceNameTextValidator = new WifiDeviceNameTextValidator();
         mMetricsFeatureProvider = provider;
+        mMarketDeviceName = SystemProperties.get(KEY_DEVICE_MARKET_NAME,mContext.getString(R.string.unknown));
     }
 
     public WifiTetherSSIDPreferenceController(Context context,
@@ -64,6 +69,7 @@ public class WifiTetherSSIDPreferenceController extends WifiTetherBasePreference
 
         mWifiDeviceNameTextValidator = new WifiDeviceNameTextValidator();
         mMetricsFeatureProvider = FeatureFactory.getFactory(context).getMetricsFeatureProvider();
+        mMarketDeviceName = SystemProperties.get(KEY_DEVICE_MARKET_NAME,mContext.getString(R.string.unknown));
     }
 
     @Override
@@ -77,6 +83,8 @@ public class WifiTetherSSIDPreferenceController extends WifiTetherBasePreference
         final SoftApConfiguration config = mWifiManager.getSoftApConfiguration();
         if (config != null) {
             mSSID = config.getSsid();
+        } else if ( mMarketDeviceName != mContext.getString(R.string.unknown) ) {
+            mSSID = mMarketDeviceName;
         } else {
             mSSID = DEFAULT_SSID;
         }
