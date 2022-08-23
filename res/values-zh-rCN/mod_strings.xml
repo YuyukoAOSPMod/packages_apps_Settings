@@ -32,5 +32,7 @@
     <!-- Refresh rate -->
     <string name="min_refresh_rate_title">最小刷新率</string>
     <string name="max_refresh_rate_title">最大刷新率</string>
+    <string name="battery_saver_refresh_rate_title">降低屏幕刷新率</string>
+    <string name="battery_saver_refresh_rate_summary">当启用省电模式时自动切换刷新率至60HZ</string>
 
 </resources>
