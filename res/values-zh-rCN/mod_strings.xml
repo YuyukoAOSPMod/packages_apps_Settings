@@ -39,6 +39,7 @@
     <string name="fingerprint_enroll_find_sensor_message_side" product="default">在您的手机侧面找到指纹传感器。</string>
 
     <!-- Refresh rate -->
-    <string name="refresh_rate_title">屏幕刷新率</string>
+    <string name="min_refresh_rate_title">最小刷新率</string>
+    <string name="max_refresh_rate_title">最大刷新率</string>
 
 </resources>
