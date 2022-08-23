@@ -30,6 +30,7 @@
     <string name="three_finger_gesture_summary">三指同时下滑以截取屏幕内容</string>
 
     <!-- Refresh rate -->
-    <string name="refresh_rate_title">屏幕刷新率</string>
+    <string name="min_refresh_rate_title">最小刷新率</string>
+    <string name="max_refresh_rate_title">最大刷新率</string>
 
 </resources>
