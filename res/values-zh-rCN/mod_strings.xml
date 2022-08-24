@@ -25,7 +25,7 @@
 
     <!-- SOC Manufacture -->
     <string name="soc_model_qualcomm">高通</string>
-    <string name="soc_model_mediatek">联发科</string>
+    <string name="soc_model_mediatek">MTK</string>
 
     <!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
     <string name="fingerprint_enroll_find_sensor_message_front" product="tablet">在您的平板电脑正面找到指纹传感器。</string>
