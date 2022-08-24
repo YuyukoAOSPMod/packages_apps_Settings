@@ -6,7 +6,6 @@ import android.content.Intent;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
-import com.android.settings.deviceinfo.BuildNumberPreferenceController;
 import com.android.settings.deviceinfo.DeviceNamePreferenceController;
 import com.android.settings.deviceinfo.aboutphone.DeviceNameWarningDialog;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -25,7 +24,7 @@ public class ModMyDeviceFragment extends DashboardFragment
 
     private static final String LOG_TAG = "ModMyDeviceFragment";
 
-    private BuildNumberPreferenceController mBuildNumberPreferenceController;
+    private ModDisplayVersionPreferenceController mModDisplayVersionPreferenceController;
 
     @Override
     public int getMetricsCategory() {
@@ -41,8 +40,8 @@ public class ModMyDeviceFragment extends DashboardFragment
     public void onAttach(Context context) {
         super.onAttach(context);
         use(DeviceNamePreferenceController.class).setHost(this /* parent */);
-        mBuildNumberPreferenceController = use(BuildNumberPreferenceController.class);
-        mBuildNumberPreferenceController.setHost(this /* parent */);
+        mModDisplayVersionPreferenceController = use(ModDisplayVersionPreferenceController.class);
+        mModDisplayVersionPreferenceController.setHost(this /* parent */);
     }
 
     @Override
@@ -68,7 +67,7 @@ public class ModMyDeviceFragment extends DashboardFragment
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (mBuildNumberPreferenceController.onActivityResult(requestCode, resultCode, data)) {
+        if (mModDisplayVersionPreferenceController.onActivityResult(requestCode, resultCode, data)) {
             return;
         }
         super.onActivityResult(requestCode, resultCode, data);
