@@ -14,6 +14,19 @@
     <!-- Mod Version -->
     <string name="mod_version">Yuyuko AOSP Mod 版本</string>
 
+    <!-- My Device -->
+    <string name="mod_settings_my_device_title">我的设备</string>
+    <string name="mod_settings_my_device_mod_version_title">Yuyuko AOSP Mod 版本</string>
+    <string name="mod_settings_my_device_display_version_title">版本号</string>
+    <string name="mod_settings_my_device_processor_title">处理器</string>
+    <string name="mod_settings_my_device_ram_title">运行内存</string>
+    <string name="mod_settings_my_device_storage_title">存储空间</string>
+    <string name="mod_settings_my_device_storage_regex">已用 %1$s / %2$s</string>
+
+    <!-- SOC Manufacture -->
+    <string name="soc_model_qualcomm">高通</string>
+    <string name="soc_model_mediatek">联发科</string>
+
     <!-- Message shown in fingerprint enrollment dialog to locate the sensor -->
     <string name="fingerprint_enroll_find_sensor_message_front" product="tablet">在您的平板电脑正面找到指纹传感器。</string>
     <string name="fingerprint_enroll_find_sensor_message_front" product="device">在您的设备正面找到指纹传感器。</string>
