@@ -66,11 +66,11 @@ public class ModHardwareInfoPreferenceController extends BasePreferenceControlle
                 socManufacture = mContext.getString(R.string.soc_model_qualcomm);
                 break;
             case "mediatek":
-                socManufacture = mContext.getString(R.string.soc_model_qualcomm);
+                socManufacture = mContext.getString(R.string.soc_model_mediatek);
                 break;
             default:
                 if (socModel.startsWith("MT")) {
-                    socManufacture = mContext.getString(R.string.soc_model_qualcomm);
+                    socManufacture = mContext.getString(R.string.soc_model_mediatek);
                 } else {
                     socManufacture = ExthmDeviceUtils.getSocManufacture();
                 }
