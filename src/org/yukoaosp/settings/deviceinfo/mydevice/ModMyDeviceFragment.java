@@ -13,6 +13,7 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
+import org.yukoaosp.settings.deviceinfo.firmwareversion.ModDisplayVersionPreferenceController;
 import org.yukoaosp.settings.deviceinfo.hardwareinfo.ModHardwareInfoPreferenceController;
 
 import java.util.ArrayList;
