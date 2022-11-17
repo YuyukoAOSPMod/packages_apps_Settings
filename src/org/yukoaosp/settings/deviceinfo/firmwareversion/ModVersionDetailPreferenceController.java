@@ -46,7 +46,11 @@ public class ModVersionDetailPreferenceController extends BasePreferenceControll
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
 
-    private static final String KEY_MOD_VERSION_PROP = "ro.yuyuko.aospmod.build.version";
+    private static final String KEY_MOD_BRANCH_PROP = "ro.yuyuko.aospmod.branch";
+
+    private static final String KEY_MOD_DEVICE_PROP = "ro.yuyuko.aospmod.device";
+
+    private static final String KEY_MOD_BUILD_TYPE_PROP = "ro.yuyuko.aospmod.build.type";
 
     private final UserManager mUserManager;
     private final long[] mHits = new long[ACTIVITY_TRIGGER_COUNT];
@@ -70,8 +74,9 @@ public class ModVersionDetailPreferenceController extends BasePreferenceControll
 
     @Override
     public CharSequence getSummary() {
-	return SystemProperties.get(KEY_MOD_VERSION_PROP,
-                mContext.getString(R.string.unknown));
+	    return SystemProperties.get(KEY_MOD_BRANCH_PROP,mContext.getString(R.string.unknown)) + " | " +
+                SystemProperties.get(KEY_MOD_DEVICE_PROP,mContext.getString(R.string.unknown)) + " | " +
+                SystemProperties.get(KEY_MOD_BUILD_TYPE_PROP,mContext.getString(R.string.unknown));
     }
 
     @Override
